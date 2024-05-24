@@ -18,7 +18,6 @@ const ProfilePage = async ({ searchParams }: SearchParamProps) => {
   const orders = await getOrdersByUser({ userId, page: ordersPage})
 
   const orderedEvents = orders?.data.map((order: IOrder) => order.event) || [];
-//   console.log({orderedEvents})
   const organizedEvents = await getEventsByUser({ userId, page: eventsPage })
 
   return (
